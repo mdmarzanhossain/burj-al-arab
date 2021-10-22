@@ -1,0 +1,25 @@
+.title{
+    padding: 5px;
+    font-size: 20px;
+    color: lightsalmon;
+    text-align: center;
+}
+.avatar{
+    padding: 5px;
+    background-color: red;
+}
+.avatar:first-letter {
+    font-size: 12px;
+}
+
+.book-btn{
+    border-radius: 5px;
+    padding: 2px 15px;
+    background-color: #3042c0;
+    color: white;
+    border-color: #3042c0;
+}
+
+.card-footer{
+    background-color: white!important;
+}
