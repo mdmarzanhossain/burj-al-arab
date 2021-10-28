@@ -6,7 +6,7 @@ import './Home.css';
 const Home = () => {
     const rooms = [
         {
-            title: 'Standard Single Room',
+            title: 'Standard Single',
             description: 'Standard Single Rooms are designed in open -concept living area and have many facilities.',
             imgUrl: 'https://cdn.jumeirah.com/-/mediadh/dh/hospitality/jumeirah/hotels/dubai/burj-al-arab-jumeirah/room/presidential-two-bedroom-suite/burj-al-arab-presidential-suite-guest-bedroom_6-4_landscape/burj-al-arab-presidential-suite-guest-bedroom_16-9_landscape.jpg?w=2080',
             bed: 1,
@@ -16,8 +16,8 @@ const Home = () => {
             price: 119
         },
         {
-            title: 'Couple Power Room',
-            description: 'Superior Double Rooms are perfectly equipped for traveling couples or friends.',
+            title: 'Couple Power',
+            description: 'Super Delux. Superior Double Rooms are perfectly equipped for traveling couples or friends.',
             imgUrl: 'https://cdn.jumeirah.com/-/mediadh/dh/hospitality/jumeirah/offers/offer-images/burj-al-arab-royal-suite-staircase-5-hero.jpg',
             bed: 1,
             capacity: 2,
@@ -26,7 +26,7 @@ const Home = () => {
             price: 149
         },
         {
-            title: 'Family Capacity Room',
+            title: 'Family Capacity',
             description: ' Have lots of in-room facilities and are designed in open-concept living area.',
             imgUrl: 'https://cdn.jumeirah.com/-/mediadh/dh/hospitality/jumeirah/hotels/dubai/burj-al-arab-jumeirah/room/presidential-two-bedroom-suite/burj-al-arab-presidential-suite-guest-bedroom_6-4_landscape/burj-al-arab-presidential-suite-guest-bedroom_16-9_landscape.jpg?w=2080',
             bed: 2,

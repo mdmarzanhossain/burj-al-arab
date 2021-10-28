@@ -6,7 +6,10 @@ import { initializeApp } from 'firebase/app';
 import {firebaseConfig} from "./firebase.config";
 import './Login.css';
 import {UserContext} from "../../App";
-import {useHistory, useLocation} from 'react-router-dom'
+import {useHistory, useLocation} from 'react-router-dom';
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/auth';
+import 'firebase/compat/firestore';
 
 const Login = () => {
     const history = useHistory();
@@ -18,11 +21,13 @@ const Login = () => {
 
     const app = initializeApp(firebaseConfig);
 
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+
     const auth = getAuth();
 
     const handleGoogleSignIn = () => {
         const googleProvider = new GoogleAuthProvider();
-        console.log("hello");
         signInWithPopup(auth, googleProvider)
             .then((result) => {
                 // This gives you a Google Access Token. You can use it to access the Google API.
@@ -32,17 +37,21 @@ const Login = () => {
                 const {displayName, email} = result.user;
                 const signInUser = {name: displayName, email};
                 setLoggedInUser(signInUser);
+                //console.log(loggedInUser);
+                storeAuthToken();
                 history.replace(from);
                 // ...
             }).catch((error) => {
-            // Handle Errors here.
-            const errorCode = error.code;
-            const errorMessage = error.message;
-            // The email of the user's account used.
-            const email = error.email;
-            // The AuthCredential type that was used.
-            const credential = GoogleAuthProvider.credentialFromError(error);
-            // ...
+                console.log(error.code,error.message);
+        });
+    }
+
+    const storeAuthToken = () => {
+        firebase.auth().currentUser.getIdToken(/* forceRefresh */ true)
+            .then(function(idToken) {
+            sessionStorage.setItem('token',idToken);
+        }).catch(function(error) {
+            console.log(error);
         });
     }
 

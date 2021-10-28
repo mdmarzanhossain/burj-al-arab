@@ -15,7 +15,7 @@ const Room = (props) => {
                 </div>
                 <Card.Img variant="top" src={imgUrl} alt="" />
                 <Card.Body>
-                    <Card.Text>
+                    <Card.Text style={{textAlign:"justify"}}>
                         {description}
                     </Card.Text>
                 </Card.Body>
